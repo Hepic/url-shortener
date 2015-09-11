@@ -12,7 +12,11 @@ $(document).ready(function()
 			
 			success: function(data)
 			{
-				$('#res_short_url').html('<a href='+data+'>'+data+'</a> <p id="msg"> created successfully! </p>');
+				if(data != 'No valid url')
+					$('#res_short_url').html('<a href='+data+'>'+data+'</a> <p id="msg"> created successfully! </p>');
+				
+				else
+					$('#res_short_url').text('No valid url');
 			},
 			
 			error: function()
